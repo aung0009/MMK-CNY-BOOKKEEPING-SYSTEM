@@ -49,7 +49,8 @@ export interface Transaction {
   outAccountInfo?: string;
 
   // 公共字段
-  counterparty?: string;         // 交易对方/往来名称/经手人 (非强制客户，纯文字记录)
+  counterparty?: string;         // 客户姓名 / 店名 (如: 瓦城阿龙玉石行)
+  contact?: string;              // 客户电话 / 微信 / TG
   fee?: number;                  // 附加手续费
   status: SettlementStatus;      // 结清或待处理
   note?: string;                 // 备注
@@ -101,6 +102,5 @@ export type ActiveTab =
   | 'entry'      // 记账开单 (换汇 / 收入 / 支出)
   | 'ledger'     // 明细流水 (全部流水账本)
   | 'report'     // 汇总报表 (综合收支与利润财务报告)
-  | 'accounts'   // 资金账户 (多币种资金池与划转)
   | 'settings';  // 汇率与设置 (每日手动汇率日志、收支分类与备份)
 

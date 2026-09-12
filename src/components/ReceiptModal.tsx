@@ -46,7 +46,8 @@ export const ReceiptModal: React.FC<ReceiptModalProps> = ({ transaction, onClose
       `【缅中换汇系统记账凭单】`,
       `单据编号: ${transaction.orderNo}`,
       `记账日期: ${transaction.date || transaction.createdAt?.slice(0, 10)}`,
-      `对方/经手: ${transaction.counterparty || '常规收支'}`,
+      `客户/店名: ${transaction.counterparty || '常规收支'}`,
+      transaction.contact ? `联系方式: ${transaction.contact}` : '',
       `-----------------------------`,
       ...contentLines,
       `核销状态: ${statusInfo.text}`,
@@ -177,9 +178,16 @@ export const ReceiptModal: React.FC<ReceiptModalProps> = ({ transaction, onClose
           {/* 明细项 */}
           <div className="space-y-2 text-xs">
             <div className="flex items-center justify-between py-1 border-b border-slate-100">
-              <span className="text-slate-500">对方名称/经手:</span>
+              <span className="text-slate-500">客户姓名/店名:</span>
               <span className="font-semibold text-slate-800">{transaction.counterparty || '常规往来'}</span>
             </div>
+
+            {transaction.contact && (
+              <div className="flex items-center justify-between py-1 border-b border-slate-100">
+                <span className="text-slate-500">联系电话/微信/TG:</span>
+                <span className="font-mono font-medium text-amber-700 bg-amber-50 px-2 py-0.5 rounded">{transaction.contact}</span>
+              </div>
+            )}
 
             {transaction.category && (
               <div className="flex items-center justify-between py-1 border-b border-slate-100">

@@ -411,6 +411,9 @@ export const LedgerPage: React.FC<LedgerPageProps> = ({
                           <div className="font-medium text-slate-900">
                             {tx.counterparty || <span className="text-slate-400">常规业务</span>}
                           </div>
+                          {tx.contact && (
+                            <div className="text-[11px] text-amber-700 font-mono">📱 {tx.contact}</div>
+                          )}
                           {tx.operator && (
                             <div className="text-[11px] text-slate-400">出纳: {tx.operator}</div>
                           )}
@@ -551,6 +554,11 @@ export const LedgerPage: React.FC<LedgerPageProps> = ({
                       <div className="text-xs font-bold text-slate-900">
                         {tx.counterparty || '常规收支'}
                       </div>
+                      {tx.contact && (
+                        <div className="text-[11px] text-amber-700 font-mono">
+                          📱 {tx.contact}
+                        </div>
+                      )}
                       {tx.category && (
                         <span className="text-[11px] text-slate-500 flex items-center gap-1 mt-0.5">
                           <Tag className="w-3 h-3 text-slate-400" />

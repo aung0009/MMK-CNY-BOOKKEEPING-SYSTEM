@@ -21,7 +21,6 @@ export const Sidebar: React.FC<NavProps> = ({ activeTab, onTabChange, pendingCou
     { id: 'entry' as ActiveTab, label: '记账开单', icon: Calculator, desc: '换汇与日常收支录入' },
     { id: 'ledger' as ActiveTab, label: '流水明细', icon: ReceiptText, desc: '双币全量明细账本', badge: pendingCount > 0 ? pendingCount : null },
     { id: 'report' as ActiveTab, label: '汇总报表', icon: BarChart3, desc: '综合收支与财务利润' },
-    { id: 'accounts' as ActiveTab, label: '资金账户', icon: Wallet, desc: '双币资金池与划转' },
     { id: 'settings' as ActiveTab, label: '每日汇率', icon: Settings, desc: '每日手动汇率与分类' },
   ];
 
@@ -103,13 +102,12 @@ export const MobileTabBar: React.FC<NavProps> = ({ activeTab, onTabChange, pendi
     { id: 'entry' as ActiveTab, label: '记账', icon: Calculator },
     { id: 'ledger' as ActiveTab, label: '明细', icon: ReceiptText, badge: pendingCount > 0 ? pendingCount : null },
     { id: 'report' as ActiveTab, label: '报表', icon: BarChart3 },
-    { id: 'accounts' as ActiveTab, label: '资金', icon: Wallet },
     { id: 'settings' as ActiveTab, label: '汇率设置', icon: Settings },
   ];
 
   return (
     <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 px-1 py-1 shadow-lg">
-      <div className="grid grid-cols-5 gap-1">
+      <div className="grid grid-cols-4 gap-1">
         {tabs.map((tab) => {
           const Icon = tab.icon;
           const isActive = activeTab === tab.id;
