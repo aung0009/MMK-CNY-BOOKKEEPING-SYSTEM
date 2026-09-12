@@ -1,0 +1,6 @@
+{
+  "name": "MMK-CNY 缅中换汇做账系统",
+  "description": "专业缅中换汇与收支记账系统，支持每日手动汇率录入、换汇开单、收支分类记账、多账户资金池、全量流水账本与综合财务汇总报表。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
